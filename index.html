@@ -12,6 +12,7 @@
             --accent-color: #00ff41;
             --secondary-color: #444;
             --section-bg: rgba(0, 255, 65, 0.03);
+            --coming-soon: #ff9500;
         }
 
         body {
@@ -133,6 +134,26 @@
             margin: 0;
         }
 
+        /* Coming Soon Badge */
+        .coming-soon-badge {
+            display: inline-block;
+            background: var(--coming-soon);
+            color: #000;
+            font-size: 0.5rem;
+            padding: 2px 6px;
+            letter-spacing: 1px;
+            margin-left: 8px;
+            vertical-align: middle;
+        }
+
+        .coming-soon-item {
+            opacity: 0.7;
+        }
+
+        .coming-soon-item h3 {
+            color: var(--coming-soon);
+        }
+
         .footer {
             margin-top: 3rem;
             font-size: 0.75rem;
@@ -192,7 +213,7 @@
 
         <p class="intro">
             SECURING CRITICAL INFRASTRUCTURE THROUGH AUTONOMOUS INTELLIGENCE.<br>
-            AI SENTINELS FOR YOUR NETWORK. DRONES FOR YOUR FIELD. SOFTWARE FOR YOUR BUSINESS.
+            AI SENTINELS FOR YOUR NETWORK. SOFTWARE FOR YOUR BUSINESS.
         </p>
 
         <!-- CYBER OPERATIONS -->
@@ -216,14 +237,14 @@
             <div class="category-title">// FIELD SYSTEMS</div>
             <div class="services-row">
                 <div class="service-item">
-                    <h3>AUTONOMOUS DRONES</h3>
-                    <p>LLM-powered UAVs with Jetson + Raspberry Pi. Search & rescue, fire evaluation, scientific
-                        research, reconnaissance.</p>
-                </div>
-                <div class="service-item">
                     <h3>MESH NETWORKS</h3>
                     <p>Self-healing, resilient communication infrastructure. Deploy anywhere, any terrain, any
                         conditions.</p>
+                </div>
+                <div class="service-item coming-soon-item">
+                    <h3>AUTONOMOUS DRONES <span class="coming-soon-badge">COMING SOON</span></h3>
+                    <p>LLM-powered UAVs for search & rescue, fire evaluation, scientific research. Currently in
+                        development.</p>
                 </div>
             </div>
         </div>
