@@ -10,8 +10,8 @@
             --bg-color: #0a0a0a;
             --text-color: #e0e0e0;
             --accent-color: #00ff41;
-            /* Cyber green */
             --secondary-color: #444;
+            --section-bg: rgba(0, 255, 65, 0.03);
         }
 
         body {
@@ -20,48 +20,47 @@
             background-color: var(--bg-color);
             color: var(--text-color);
             font-family: 'Courier New', Courier, monospace;
-            /* Terminal vibe */
-            min-height: 100vh; /* Changed from height: 100vh to allow scrolling */
+            min-height: 100vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             background: radial-gradient(circle at center, #111 0%, #000 100%);
-            overflow-x: hidden; /* Prevent horizontal scroll */
+            overflow-x: hidden;
         }
 
         .container {
             text-align: center;
-            max-width: 800px;
-            width: 90%; /* Responsive width */
+            max-width: 1000px;
+            width: 90%;
             padding: 2rem;
-            margin: 2rem 0; /* Add margin for mobile scrolling space */
+            margin: 2rem 0;
             border: 1px solid #333;
             background: rgba(0, 0, 0, 0.8);
-            box-shadow: 0 0 20px rgba(0, 255, 65, 0.1);
-            box-sizing: border-box; /* Ensure padding doesn't overflow */
+            box-shadow: 0 0 30px rgba(0, 255, 65, 0.1);
+            box-sizing: border-box;
         }
 
         h1 {
-            font-size: 3rem;
+            font-size: 3.5rem;
             margin-bottom: 0.5rem;
             text-transform: uppercase;
-            letter-spacing: 4px;
+            letter-spacing: 6px;
             color: #fff;
-            word-wrap: break-word; /* Prevent overflow on small screens */
         }
 
         .tagline {
-            font-size: 1.2rem;
+            font-size: 1rem;
             color: var(--accent-color);
             margin-bottom: 2rem;
-            line-height: 1.5; /* Better spacing for wrapped text */
+            text-transform: uppercase;
+            letter-spacing: 3px;
         }
 
         .cursor {
             display: inline-block;
             width: 10px;
-            height: 1.2rem;
+            height: 1rem;
             background-color: var(--accent-color);
             animation: blink 1s infinite;
             vertical-align: middle;
@@ -79,36 +78,67 @@
             }
         }
 
-        .services {
+        .intro {
+            line-height: 1.8;
+            color: #999;
+            font-size: 0.85rem;
+            max-width: 700px;
+            margin: 0 auto 3rem auto;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Service Categories */
+        .service-category {
+            margin: 2rem 0;
+            padding: 1.5rem;
+            border: 1px solid #222;
+            background: var(--section-bg);
+        }
+
+        .category-title {
+            color: var(--accent-color);
+            font-size: 0.9rem;
+            letter-spacing: 3px;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            border-bottom: 1px solid #333;
+            padding-bottom: 0.5rem;
+        }
+
+        .services-row {
             display: flex;
             justify-content: center;
             gap: 2rem;
-            margin-top: 3rem;
             flex-wrap: wrap;
         }
 
         .service-item {
-            border-top: 2px solid var(--secondary-color);
-            padding-top: 1rem;
             width: 200px;
-            flex: 1 1 200px; /* Allow flex shrinking/growing */
+            text-align: left;
         }
 
         .service-item h3 {
             color: #fff;
-            font-size: 1rem;
-            margin-bottom: 0.5rem;
+            font-size: 0.85rem;
+            margin-bottom: 0.3rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         .service-item p {
-            font-size: 0.8rem;
-            color: #888;
+            font-size: 0.7rem;
+            color: #666;
+            line-height: 1.4;
+            margin: 0;
         }
 
         .footer {
-            margin-top: 4rem;
-            font-size: 0.8rem;
-            color: #555;
+            margin-top: 3rem;
+            font-size: 0.75rem;
+            color: #444;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         a {
@@ -116,22 +146,39 @@
             text-decoration: none;
         }
 
+        a:hover {
+            text-decoration: underline;
+        }
+
         /* Mobile Optimization */
         @media (max-width: 600px) {
             h1 {
-                font-size: 2rem; /* Smaller title */
+                font-size: 2rem;
+                letter-spacing: 3px;
+            }
+
+            .tagline {
+                font-size: 0.8rem;
                 letter-spacing: 2px;
             }
-            .tagline {
-                font-size: 1rem; /* Smaller tagline */
-            }
+
             .container {
-                padding: 1rem; /* Less padding */
+                padding: 1rem;
                 width: 95%;
                 margin: 1rem 0;
             }
+
             .service-item {
-                width: 100%; /* Stack services */
+                width: 100%;
+                text-align: center;
+            }
+
+            .services-row {
+                gap: 1rem;
+            }
+
+            .service-category {
+                padding: 1rem;
             }
         }
     </style>
@@ -141,37 +188,66 @@
 
     <div class="container">
         <h1>OSI<span style="color:var(--accent-color)">.</span>CYBER</h1>
-        <div class="tagline">ACTIVE AI DEFENSE // OFFENSIVE SECURITY // ENTERPRISE AUTOMATION<span
-                class="cursor"></span></div>
+        <div class="tagline">ON-SITE INTELLIGENCE<span class="cursor"></span></div>
 
-        <p style="line-height: 1.6; color: #bbb;">
-            Securing critical infrastructure through intelligence. <br>
-            We deploy autonomous AI sentinels to guard your network and build custom software to run your business.
+        <p class="intro">
+            SECURING CRITICAL INFRASTRUCTURE THROUGH AUTONOMOUS INTELLIGENCE.<br>
+            AI SENTINELS FOR YOUR NETWORK. DRONES FOR YOUR FIELD. SOFTWARE FOR YOUR BUSINESS.
         </p>
 
-        <div class="services">
-            <div class="service-item">
-                <h3>PENETRATION TESTING</h3>
-                <p>Identifying vulnerabilities before the enemy does.</p>
+        <!-- CYBER OPERATIONS -->
+        <div class="service-category">
+            <div class="category-title">// CYBER OPERATIONS</div>
+            <div class="services-row">
+                <div class="service-item">
+                    <h3>PENETRATION TESTING</h3>
+                    <p>Identify vulnerabilities before adversaries do. Red team assessments for networks, applications,
+                        and infrastructure.</p>
+                </div>
+                <div class="service-item">
+                    <h3>ACTIVE AI DEFENSE</h3>
+                    <p>Autonomous neural networks monitoring your systems 24/7, intercepting threats in real-time.</p>
+                </div>
             </div>
-            <div class="service-item">
-                <h3>ACTIVE AI DEFENSE</h3>
-                <p>Autonomous neural networks that intercept threats in real-time.</p>
+        </div>
+
+        <!-- FIELD SYSTEMS -->
+        <div class="service-category">
+            <div class="category-title">// FIELD SYSTEMS</div>
+            <div class="services-row">
+                <div class="service-item">
+                    <h3>AUTONOMOUS DRONES</h3>
+                    <p>LLM-powered UAVs with Jetson + Raspberry Pi. Search & rescue, fire evaluation, scientific
+                        research, reconnaissance.</p>
+                </div>
+                <div class="service-item">
+                    <h3>MESH NETWORKS</h3>
+                    <p>Self-healing, resilient communication infrastructure. Deploy anywhere, any terrain, any
+                        conditions.</p>
+                </div>
             </div>
-            <div class="service-item">
-                <h3>CUSTOM SOFTWARE</h3>
-                <p>Bespoke automation for inventory, logistics, and data.</p>
-            </div>
-            <div class="service-item">
-                <h3>PRIVATE & CUSTOM LLMs</h3>
-                <p>Secure, local AI models trained on your proprietary data.</p>
+        </div>
+
+        <!-- ENTERPRISE SOFTWARE -->
+        <div class="service-category">
+            <div class="category-title">// ENTERPRISE SOFTWARE</div>
+            <div class="services-row">
+                <div class="service-item">
+                    <h3>CUSTOM AUTOMATION</h3>
+                    <p>Bespoke software for inventory, logistics, maintenance tracking, and operational intelligence.
+                    </p>
+                </div>
+                <div class="service-item">
+                    <h3>PRIVATE LLMs</h3>
+                    <p>Secure, air-gapped AI models trained exclusively on your proprietary data. Your intelligence
+                        stays yours.</p>
+                </div>
             </div>
         </div>
 
         <div class="footer">
-            &copy; 2025 On-Site Intelligence LLC. Denver, CO.<br>
-            <br>
-            <a href="mailto:info@osi-cyber.com">info@osi-cyber.com</a>
+            &copy; 2025 ON-SITE INTELLIGENCE LLC // DENVER, CO<br><br>
+            <a href="mailto:info@osi-cyber.com">INFO@OSI-CYBER.COM</a>
         </div>
     </div>
 
